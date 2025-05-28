@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nordwald Roleplay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+    }
+    header {
+      background: #111;
+      padding: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px #000;
+    }
+    header img {
+      height: 70px;
+    }
+    nav a {
+      color: #0af;
+      margin: 0 1.5em;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/mnt/data/3143e426-17eb-4914-88c6-be884750563d.png');
+      background-size: cover;
+      background-position: center;
+      padding: 25em 2em;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 7em;
+      color: #fff;
+      text-shadow: 2px 2px 10px #000;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #0af; }
+      to { text-shadow: 0 0 30px #0af; }
+    }
+    .section {
+      padding: 6em 2em;
+      max-width: 1800px;
+      margin: auto;
+    }
+    .section h2 {
+      font-size: 3.5em;
+      margin-bottom: 1em;
+      color: #0af;
+      border-bottom: 2px solid #0af;
+      display: inline-block;
+    }
+    .team-grid, .faction-grid, .wiki-grid, .faq-grid {
+      display: grid;
+      gap: 2em;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 2em;
+      box-shadow: 0 0 15px #000;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #0af;
+    }
+    .faq-item, .faq-thread {
+      background: #121212;
+      padding: 1.5em;
+      margin: 1em 0;
+      border-left: 4px solid #0af;
+      border-radius: 8px;
+    }
+    .faq-form {
+      margin-top: 3em;
+      background: #1a1a1a;
+      padding: 2em;
+      border-radius: 12px;
+    }
+    .faq-form input, .faq-form textarea {
+      width: 100%;
+      padding: 1em;
+      margin-top: 1em;
+      background: #0b0b0b;
+      border: 1px solid #0af;
+      border-radius: 8px;
+      color: white;
+    }
+    .faq-form button, .reply-button {
+      margin-top: 1em;
+      padding: 1em 2em;
+      background: #0af;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .reply-input {
+      margin-top: 1em;
+      display: none;
+    }
+    footer {
+      background: #0b0b0b;
+      padding: 2em;
+      text-align: center;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://cdn.discordapp.com/attachments/1341385109135429653/1377286002670043186/ChatGPT_Image_26._Mai_2025__19_34_04-removebg-preview.png?ex=6838690b&is=6837178b&hm=71eddc26fb04371970701fd1e82e50254577cad16e96caba175074e39a93867c&" />
+    <nav>
+      <a href="#start">Start</a>
+      <a href="#team">Team</a>
+      <a href="#fraktionen">Fraktionen</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://discord.gg/YOURSERVER" target="_blank">Discord</a>
+      <a href="#regelwerk">Regelwerk</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="start">
+    <h1>Willkommen bei Nordwald Roleplay</h1>
+  </section>
+
+  <section class="section" id="team">
+    <h2>Unser Team</h2>
+    <div class="team-grid">
+      <div class="card">
+        <h3>MaxMustermann</h3>
+        <p>Serverleitung</p>
+      </div>
+      <div class="card">
+        <h3>RPQueen</h3>
+        <p>Support & Konzept</p>
+      </div>
+      <div class="card">
+        <h3>TechTim</h3>
+        <p>Entwicklung</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fraktionen">
+    <h2>Fraktionen</h2>
+    <div class="faction-grid">
+      <div class="card"><h3>Polizei</h3><p>Schützen und Dienen mit System – Ordnung in Nordwald</p></div>
+      <div class="card"><h3>Medics</h3><p>Lebensretter rund um die Uhr – Erste Hilfe für alle Bürger</p></div>
+      <div class="card"><h3>Mafia</h3><p>Geheim, gefährlich, organisiert – Kontrolle der Unterwelt</p></div>
+      <div class="card"><h3>Zivilisten</h3><p>Händler, Mechaniker, Bürger – Das Herz der Stadt</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <h2>FAQ & Community-Fragen</h2>
+    <div class="faq-grid" id="faq-threads"></div>
+    <div class="faq-form">
+      <h3>Neue Frage stellen</h3>
+      <input id="question-title" type="text" placeholder="Fragetitel" />
+      <textarea id="question-body" rows="5" placeholder="Frage beschreiben..."></textarea>
+      <button onclick="addFAQ()">Absenden</button>
+    </div>
+  </section>
+
+  <section class="section" id="regelwerk">
+    <h2>Regelwerk</h2>
+    <p>Hier steht das Regelwerk des Servers. Inhalte folgen oder werden dynamisch geladen.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Nordwald Roleplay – Alle Rechte vorbehalten
+  </footer>
+
+  <script>
+    function addFAQ() {
+      const title = document.getElementById('question-title').value;
+      const body = document.getElementById('question-body').value;
+      if (!title || !body) return;
+
+      const thread = document.createElement('div');
+      thread.className = 'faq-thread';
+      const id = 'faq_' + Date.now();
+      thread.innerHTML = `
+        <h4>[Community Thread] ${title}</h4>
+        <p>${body}</p>
+        <div id="${id}-replies"></div>
+        <div class="reply-input">
+          <input type="text" placeholder="Antwort eingeben..." id="${id}-input" />
+          <button onclick="addReply('${id}')">Antworten</button>
+        </div>
+        <button class="reply-button" onclick="toggleReply(this)">Antwort schreiben</button>
+      `;
+      document.getElementById('faq-threads').appendChild(thread);
+      document.getElementById('question-title').value = '';
+      document.getElementById('question-body').value = '';
+    }
+
+    function toggleReply(button) {
+      const replyDiv = button.previousElementSibling;
+      replyDiv.style.display = replyDiv.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function addReply(id) {
+      const input = document.getElementById(id + '-input');
+      const text = input.value.trim();
+      if (!text) return;
+      const replies = document.getElementById(id + '-replies');
+      const p = document.createElement('p');
+      p.innerText = 'Antwort: ' + text;
+      replies.appendChild(p);
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
